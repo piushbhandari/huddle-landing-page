@@ -13,14 +13,21 @@ html {
   font-size: 62.5%;
 }
 body {
+  border: 1px solid white;
   background: #684bb1;
-  padding-top: 8rem;
+  padding: 8rem 3rem 4rem 3rem;
+  height: 100%;
 }
-.desktop-bg {
+.desktop-bg,
+.mobile-bg {
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
+  width: 100%;
+}
+.mobile-bg {
+  display: none;
 }
 .container {
   max-width: 127.5rem;
@@ -106,4 +113,51 @@ body {
 .social-media-icons a:focus {
   color: #e880e8;
   border: 1px solid #e880e8;
+}
+@media all and (max-width: 1175px) {
+  .hero-section {
+    flex-direction: column;
+  }
+  .hero-textbox {
+    text-align: center;
+    max-width: 90rem;
+    margin: 0 auto;
+  }
+  .social-media-icons {
+    justify-content: center;
+  }
+}
+
+@media all and (max-width: 600px) {
+  body {
+    padding-top: 4rem;
+  }
+  .mobile-bg {
+    display: block;
+  }
+  .desktop-bg {
+    display: none;
+  }
+}
+@media all and (max-width: 500px) {
+  body {
+    padding: 3.82rem 4rem 4rem 4rem;
+  }
+
+  .hero-section {
+    margin-top: 6.98rem;
+  }
+  .hero-title {
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    margin-bottom: 1.6rem;
+    margin-top: 0;
+  }
+  .hero-description {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+  .hero-cta {
+    width: 100%;
+  }
 }
